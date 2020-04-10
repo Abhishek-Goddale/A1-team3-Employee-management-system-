@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+  <button mat-mini-fab color="warn" [matMenuTriggerFor]="rootMenu">
+    <mat-icon svgIcon="menu"></mat-icon>
+  </button>
+  <mat-menu #rootMenu="matMenu">
+    <button mat-menu-item routerLink="/aboutus"><mat-icon svgIcon="dashboard-black" color="primary"></mat-icon>Home</button>
+    <button mat-menu-item [matMenuTriggerFor]="emplMenu"><mat-icon svgIcon="star" color="primary"></mat-icon>Manage</button>
+      <button mat-menu-item [matMenuTriggerFor]="setupMenu"><mat-icon svgIcon="business" color="primary"></mat-icon>Setup</button>
+    <button mat-menu-item [matMenuTriggerFor]="contactMenu"><mat-icon svgIcon="phone" color="primary"></mat-icon>Contact</button>
+  </mat-menu>
+  <mat-menu #emplMenu="matMenu">
+      <button mat-menu-item routerLink="/employee">Employee</button>
+      <button mat-menu-item routerLink="/salary">Salary Vouchers</button>
+      <button mat-menu-item routerLink="/voucher">Vouchers</button>
+  </mat-menu>
+  <mat-menu #setupMenu="matMenu">
+    <button mat-menu-item routerLink="/jobcode">Job Code</button>
+    <button mat-menu-item routerLink="/salarycode">Salary Code</button>
+    <button mat-menu-item routerLink="/leavecode">Leave Code</button>
+  </mat-menu>
+  <mat-menu #contactMenu="matMenu">
+    <a href="{{ configData.fblink }}" target="_blank">
+      <button mat-menu-item>
+        <mat-icon matTooltip="connect with FaceBook" svgIcon="facebook"></mat-icon>
+      </button>
+    </a>
+    <a href="{{ configData.linkedin }}" target="_blank">
+      <button mat-menu-item>
+        <mat-icon matTooltip="connect with LinkedIn" svgIcon="linkedin"></mat-icon>
+      </button>
+    </a>
+    <a href="{{ configData.github }}" target="_blank">
+      <button mat-menu-item>
+        <mat-icon matTooltip="connect with GitHub" svgIcon="github"></mat-icon>
+      </button>
+    </a>
+    <a href="{{ configData.emailid }}" target="_blank">
+      <button mat-menu-item>
+        <mat-icon matTooltip="email" svgIcon="email"></mat-icon>
+      </button>
+    </a>
+  </mat-menu>
+  <mat-icon class="example-icon" svgIcon="{{ imageUrl }}"></mat-icon>
+  <span matTooltip="About us">{{ pageTitle }}</span><span class="example-spacer"></span>
+  
+ 
